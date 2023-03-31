@@ -4,6 +4,7 @@ import qala from "../Galliyan.mp3"; // importing the music
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai"; // icons for play and pause
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi"; // icons for next and previous track
 import { IconContext } from "react-icons"; 
+import ".././index.css";
 
 let carouselImagesLocation = [
     "./Media/crousel/c1.jpg",
@@ -52,7 +53,7 @@ function Carousel() {
                 <p style={{paddingLeft:"20px", color:"white", fontSize:"20px"}}>Top Songs</p>
                 {carouselImagesLocation.map((image, index) => {
                     return(
-                        <div style={{float:"left", padding:"10px"}} onClick={playingButton}>
+                        <div style={{float:"left", padding:"10px"}} onClick={playingButton} className="card-image">
                             <img src={image} style={{width : "400px", height : "250px",borderRadius:"5px", fontFamily:"Vollkorn"}}/>
                         </div>
                     )
@@ -63,7 +64,7 @@ function Carousel() {
                 <p style={{paddingLeft:"20px", color:"white", fontSize:"20px"}}>Top Artist</p>
                 {artists.map((image, index) => {
                     return(
-                        <div style={{float:"left", padding:"10px"}} onClick={playingButton}>
+                        <div style={{float:"left", padding:"10px"}} onClick={playingButton} className="card-image">
                             <img src={image} style={{width : "190px", height : "190px", borderRadius:"100px", fontFamily:"Vollkorn"}}/>
                         </div>
                     )
@@ -74,7 +75,7 @@ function Carousel() {
                 <p style={{paddingLeft:"20px", color:"white", fontSize:"20px"}}>Latest English</p>
                 {latestEnglish.map((image, index) => {
                     return(
-                        <div style={{float:"left", padding:"10px"}} onClick={playingButton}>
+                        <div style={{float:"left", padding:"10px"}} onClick={playingButton} className="card-image">
                             <img src={image} style={{width : "400px", height : "250px",borderRadius:"5px", fontFamily:"Vollkorn"}}/>
                         </div>
                     )
@@ -82,7 +83,7 @@ function Carousel() {
             }
             </div>
             <div style={{marginLeft: "45vw", position: "fixed", bottom:"30px"}}>
-                <div>
+                <div className="card-image" onClick={playingButton}>
                     <img src="./gg.webp" width="155px" style={{borderRadius:"10px", marginBottom:"10px"}}/>
                 </div>
                 <button className="playButton">
